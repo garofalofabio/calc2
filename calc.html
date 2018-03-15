@@ -4,7 +4,7 @@
 
 <script language=javascript type="text/javascript">
 
-var plus,minus,divide,multiply,max,pow,min,avg
+var plus,minus,divide,multiply,max,pow,min,avg,mod
 
 function initialize(){
  plus=document.calc.operator.options[0]
@@ -15,6 +15,7 @@ function initialize(){
  pow=document.calc.operator.options[5]
  min=document.calc.operator.options[6]
  avg=document.calc.operator.options[7]
+ mod=document.calc.operator.options[8]
 }
 
 function calculate(){
@@ -36,6 +37,8 @@ function calculate(){
 		document.calc.answer.value = Math.min(a,b)
 	if (avg.selected)
 		document.calc.answer.value = (a + b) / 2
+    if (mod.selected)
+		document.calc.answer.value = a % b
 }
 
 </script>
@@ -60,6 +63,7 @@ Change the operation via the dropdown selection box if desired.
 <option value=pow>**
 <option value=min>min
 <option value=avg>avg
+<option value=mod>mod
 </select>
 
 <input type=text name=val2 size=10>
